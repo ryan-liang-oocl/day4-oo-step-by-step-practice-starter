@@ -7,6 +7,6 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return super.introduce() + " I am a teacher.";
+        return String.format("%s I am a teacher.", super.introduce());
     }
 }
