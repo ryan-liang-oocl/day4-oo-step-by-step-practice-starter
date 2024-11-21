@@ -13,12 +13,18 @@ public class Teacher extends Person {
         klassList = new ArrayList<>();
     }
 
+
+
     @Override
     public String introduce() {
+        String commonIntroduce = String.format("%s I am a teacher.", super.introduce());
+        if (klassList.isEmpty()) {
+            return commonIntroduce;
+        }
         String classes = "Class " + klassList.stream()
                 .map(klass -> String.valueOf(klass.getNumber()))
                 .collect(Collectors.joining(", "));
-        return String.format("%s I am a teacher. I teach %s.", super.introduce(), classes);
+        return String.format("%s I teach %s.", commonIntroduce, classes);
     }
 
     public void assignTo(Klass klass) {

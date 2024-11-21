@@ -16,6 +16,18 @@ public class Person {
         this.age = age;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     public String introduce() {
         return String.format("My name is %s. I am %s years old.", name, age);
     }
