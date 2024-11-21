@@ -4,6 +4,10 @@ public class Student extends Person {
 
     private Klass klass;
 
+    public Klass getKlass() {
+        return klass;
+    }
+
     public Student(Integer id, String name, int age) {
         super(id, name, age);
     }
