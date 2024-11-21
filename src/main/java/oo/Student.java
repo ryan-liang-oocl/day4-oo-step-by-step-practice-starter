@@ -14,7 +14,10 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
-        return String.format("%s I am a student. I am in class %s.", super.introduce(), klass == null ? "" : klass.getNumber());
+        if (klass != null && this.equals(klass.getLeader())) {
+            return String.format("%s I am a student. I am the leader of class %s.", super.introduce(), klass.getNumber());
+        }
+        return String.format("%s I am a student. I am in class %s.", super.introduce(), klass.getNumber());
     }
 
     public boolean isIn(Klass klass) {
